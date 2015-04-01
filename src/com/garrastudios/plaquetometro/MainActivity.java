@@ -502,11 +502,11 @@ public class MainActivity extends ActionBarActivity {
     		
     		
     		// CCI ================================================================================
-    		double CCI = (qtDiferencaPlaquetas * superficie) / (volume / 100000000L);
+    		double CCI = (qtDiferencaPlaquetas * superficie) / (volume / 100000000000L);
 
     		TextView rsltCCI = ((TextView)RootView.findViewById(R.id.rsltCCI));
     		rsltCCI.setTextSize(55);
-    		rsltCCI.setText(String.format("%.2f/L", CCI));
+    		rsltCCI.setText(String.format("%.0f/L", CCI));
     		// ====================================================================================    		
     		
         }
