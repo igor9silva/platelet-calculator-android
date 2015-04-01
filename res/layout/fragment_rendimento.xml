@@ -12,7 +12,7 @@
 	    android:paddingRight="@dimen/activity_horizontal_margin"
 	    android:paddingTop="@dimen/activity_vertical_margin"
 	    tools:context="com.garrastudios.plaquetometro.MainActivity$PlaceholderFragment" >
-	
+
 	    <TextView
 	        android:id="@+id/lblPlaquetometriaPre"
 	        android:layout_width="wrap_content"
@@ -24,7 +24,7 @@
 	        android:text="@string/plaquetometria"
 	        android:textAppearance="?android:attr/textAppearanceSmall"
 	        android:textSize="20sp" />
-	
+
 	    <TextView
 	        android:id="@+id/lblPesoRend"
 	        android:layout_width="wrap_content"
@@ -35,18 +35,18 @@
 	        android:text="@string/peso"
 	        android:textAppearance="?android:attr/textAppearanceSmall"
 	        android:textSize="20sp" />
-	
+
 	    <TextView
 	        android:id="@+id/lblVolume"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/lblPesoRend"
-	        android:layout_below="@+id/lblPesoRend"
+	        android:layout_alignLeft="@+id/lblAlturaRend"
+	        android:layout_below="@+id/lblAlturaRend"
 	        android:layout_marginTop="20dp"
 	        android:text="@string/volume"
 	        android:textAppearance="?android:attr/textAppearanceSmall"
 	        android:textSize="20sp" />
-	
+
 	    <RadioGroup
 	        android:id="@+id/rdgTipoPessoaRend"
 	        style=""
@@ -60,26 +60,26 @@
 	        android:padding="0dp"
 	        android:paddingLeft="0dp"
 	        android:paddingTop="0dp" >
-	
+
 	        <RadioButton
 	            android:id="@+id/radioHomemRend"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:checked="false"
 	            android:text="@string/homem" />
-	
+
 	        <RadioButton
 	            android:id="@+id/radioMulherRend"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:text="@string/mulher" />
-	
+
 	        <RadioButton
 	            android:id="@+id/radioRNRend"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:text="@string/rn" />
-	
+
 	        <RadioButton
 	            android:id="@+id/radioPrematuroRend"
 	            android:layout_width="wrap_content"
@@ -87,22 +87,21 @@
 	            android:layout_marginRight="16dp"
 	            android:text="@string/prematuro" />
 	    </RadioGroup>
-	
+
 	    <EditText
 	        android:id="@+id/txtPlaquetometriaPre"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_above="@+id/lblPesoRend"
 	        android:layout_alignBottom="@+id/lblPlaquetometriaPre"
 	        android:layout_alignLeft="@+id/txtPesoRend"
 	        android:ems="3"
 	        android:gravity="center"
 	        android:inputType="number"
 	        android:maxLength="2" >
-	
+
 	        <requestFocus />
 	    </EditText>
-	
+
 	    <EditText
 	        android:id="@+id/txtVolume"
 	        android:layout_width="wrap_content"
@@ -114,18 +113,18 @@
 	        android:gravity="center"
 	        android:inputType="number"
 	        android:maxLength="3" />
-	
+
 	    <EditText
 	        android:id="@+id/txtPesoRend"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_above="@+id/lblVolume"
+	        android:layout_alignBottom="@+id/lblPesoRend"
 	        android:layout_alignLeft="@+id/txtVolume"
 	        android:ems="3"
 	        android:gravity="center"
 	        android:inputType="number"
 	        android:maxLength="3" />
-	
+
 	    <TextView
 	        android:id="@+id/lblPlaquetometriaPre2"
 	        android:layout_width="wrap_content"
@@ -136,7 +135,7 @@
 	        android:text="@string/mm3"
 	        android:textAppearance="?android:attr/textAppearanceSmall"
 	        android:textSize="12sp" />
-	
+
 	    <TextView
 	        android:id="@+id/lblPesoRend2"
 	        android:layout_width="wrap_content"
@@ -147,7 +146,7 @@
 	        android:text="@string/unidadePeso"
 	        android:textAppearance="?android:attr/textAppearanceSmall"
 	        android:textSize="12sp" />
-	
+
 	    <TextView
 	        android:id="@+id/lblVolume2"
 	        android:layout_width="wrap_content"
@@ -158,7 +157,7 @@
 	        android:text="@string/unidadeVolume"
 	        android:textAppearance="?android:attr/textAppearanceSmall"
 	        android:textSize="12sp" />
-	
+
 	    <RadioGroup
 	        android:id="@+id/rdgTipoTransfusaoRend"
 	        android:layout_width="wrap_content"
@@ -170,21 +169,21 @@
 	        android:padding="0dp"
 	        android:paddingLeft="0dp"
 	        android:paddingTop="0dp" >
-	
+
 	        <RadioButton
 	            android:id="@+id/radioStandard"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:checked="false"
 	            android:text="@string/radioStandard" />
-	
+
 	        <RadioButton
 	            android:id="@+id/radioAferese"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:text="@string/radioAferese" />
 	    </RadioGroup>
-	
+
 	    <TextView
 	        android:id="@+id/rsltBox"
 	        android:layout_width="wrap_content"
@@ -193,7 +192,7 @@
 	        android:layout_centerHorizontal="true"
 	        android:textAppearance="?android:attr/textAppearanceMedium"
 	        android:textSize="55sp" />
-	
+
 	    <TextView
 	        android:id="@+id/lbl3"
 	        android:layout_width="wrap_content"
@@ -205,7 +204,7 @@
 	        android:text="@string/percentualDeRendimento"
 	        android:textAppearance="?android:attr/textAppearanceLarge"
 	        android:textColor="@android:color/holo_blue_dark" />
-	
+
 	    <TextView
 	        android:id="@+id/lblPlaquetometriaPos"
 	        android:layout_width="wrap_content"
@@ -216,7 +215,7 @@
 	        android:text="@string/plaquetometria"
 	        android:textAppearance="?android:attr/textAppearanceSmall"
 	        android:textSize="20sp" />
-	
+
 	    <EditText
 	        android:id="@+id/txtPlaquetometriaPos"
 	        android:layout_width="wrap_content"
@@ -227,7 +226,7 @@
 	        android:gravity="center"
 	        android:inputType="number"
 	        android:maxLength="3" />
-	
+
 	    <TextView
 	        android:id="@+id/lblPlaquetometriaPos2"
 	        android:layout_width="wrap_content"
@@ -238,7 +237,7 @@
 	        android:text="@string/mm3"
 	        android:textAppearance="?android:attr/textAppearanceSmall"
 	        android:textSize="12sp" />
-	
+
 	    <TextView
 	        android:id="@+id/lblPlaquetometriaPreTipo"
 	        android:layout_width="wrap_content"
@@ -249,7 +248,7 @@
 	        android:text="@string/preTransfusional"
 	        android:textAppearance="?android:attr/textAppearanceSmall"
 	        android:textColor="@android:color/darker_gray" />
-	
+
 	    <TextView
 	        android:id="@+id/lblPlaquetometriaPosTipo"
 	        android:layout_width="wrap_content"
@@ -260,7 +259,7 @@
 	        android:text="@string/posTransfusional"
 	        android:textAppearance="?android:attr/textAppearanceSmall"
 	        android:textColor="@android:color/darker_gray" />
-	
+
 	    <ImageView
 	        android:id="@+id/separator"
 	        android:layout_width="wrap_content"
@@ -273,6 +272,64 @@
 	        android:maxWidth="1dp"
 	        android:scaleType="centerCrop"
 	        android:src="@drawable/abc_ab_stacked_solid_light_holo" />
-	
+
+	    <TextView
+	        android:id="@+id/lblAlturaRend"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/lblPesoRend"
+	        android:layout_alignParentLeft="false"
+	        android:layout_alignParentTop="false"
+	        android:layout_below="@+id/lblPesoRend"
+	        android:layout_marginTop="20dp"
+	        android:text="@string/altura"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:textSize="20sp" />
+
+	    <EditText
+	        android:id="@+id/txtAlturaRend"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/lblAlturaRend"
+	        android:layout_alignLeft="@+id/txtPesoRend"
+	        android:layout_alignParentLeft="false"
+	        android:ems="3"
+	        android:gravity="center"
+	        android:inputType="number"
+	        android:maxLength="3" />
+
+	    <TextView
+	        android:id="@+id/lblAlturaRend2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/lblAlturaRend"
+	        android:layout_alignParentLeft="false"
+	        android:layout_alignParentRight="true"
+	        android:layout_below="@+id/txtAlturaRend"
+	        android:text="@string/unidadeAltura"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:textSize="12sp" />
+
+	    <TextView
+	        android:id="@+id/rsltCCI"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/lbl4"
+	        android:layout_centerHorizontal="true"
+	        android:textAppearance="?android:attr/textAppearanceMedium"
+	        android:textSize="55sp" />
+
+	    <TextView
+	        android:id="@+id/lbl4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/rsltBox"
+	        android:layout_centerHorizontal="true"
+	        android:gravity="center_horizontal"
+	        android:text="@string/CCI"
+	        android:textAppearance="?android:attr/textAppearanceLarge"
+	        android:textColor="@android:color/holo_blue_dark" />
+
 	</RelativeLayout>
+
 </ScrollView>
