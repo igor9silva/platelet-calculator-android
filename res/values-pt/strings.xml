@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Fórmula de Albiero</string>
+    <string name="shortchut_name">C. de Plaquetas</string>
+    <string name="title_section1">Volume</string>
+    <string name="title_section2">Rendimento</string>
+    
+    <!-- txt -->
+    <string name="peso">Peso</string>
+    <string name="plaquetometria">Plaquetometria</string>
+    <string name="rendimento">Rendimento</string>
+    <string name="volume">Volume</string>
+    <!--     -->
+    
+    <!-- transfusao -->
+    <string name="terapeutica">Terapêutica</string>
+    <string name="profilatico">Profilática</string>
+    <!--            -->
+    
+    <!-- pessoa -->
+    <string name="homem">Homem</string>
+    <string name="mulher">Mulher ou\nCriança</string>
+    <string name="rn">Recém-Nascido</string>
+    <string name="prematuro">Prematuro</string>
+    <!--        -->
+    
+    <!-- outros -->
+    <string name="unidade">unidade</string>
+    <string name="standard">Standard/Randômica</string>
+    <string name="radioStandard">Standard</string>
+    <string name="aferese">Aférese/Buffy Coat/Pool</string>
+    <string name="radioAferese">Aférese</string>
+    <string name="percentualDeRendimento">Percentual de Rendimento</string>
+    <string name="mm3">000   /mm3</string>
+    <string name="unidadePeso">kg</string>
+    <string name="porcentagem">%</string>
+    <string name="unidadeVolume">ml</string>
+    <string name="missingData">Faltam Dados</string>
+    <string name="preTransfusional">Pré-transfusional</string>
+    <string name="posTransfusional">Pós-transfusional</string>
+    <string name="separator">separator</string>
+    <!--        -->
+
+</resources>

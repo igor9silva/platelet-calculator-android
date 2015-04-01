@@ -1,0 +1,253 @@
+<ScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+
+	<RelativeLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="fill"
+	    android:paddingLeft="@dimen/activity_horizontal_margin"
+	    android:paddingRight="@dimen/activity_horizontal_margin"
+	    android:paddingTop="@dimen/activity_vertical_margin"
+	    tools:context="com.garrastudios.plaquetometro.MainActivity$PlaceholderFragment" >
+	
+	    <TextView
+	        android:id="@+id/lblPlaquetometria"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginTop="10dp"
+	        android:text="@string/plaquetometria"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:textSize="20sp" />
+	
+	    <TextView
+	        android:id="@+id/lblPeso"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/lblPlaquetometria"
+	        android:layout_below="@+id/lblPlaquetometria"
+	        android:layout_marginTop="20dp"
+	        android:text="@string/peso"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:textSize="20sp" />
+	
+	    <TextView
+	        android:id="@+id/lblRendimento"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/lblPeso"
+	        android:layout_below="@+id/lblPeso"
+	        android:layout_marginTop="20dp"
+	        android:text="@string/rendimento"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:textSize="20sp" />
+	
+	    <RadioGroup
+	        android:id="@+id/rdgTipoPessoa"
+	        style=""
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@id/lblRendimento"
+	        android:layout_marginLeft="13dp"
+	        android:layout_marginTop="13dp"
+	        android:orientation="vertical"
+	        android:padding="0dp"
+	        android:paddingLeft="0dp"
+	        android:paddingTop="0dp" >
+	
+	        <RadioButton
+	            android:id="@+id/radioHomem"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:checked="false"
+	            android:text="@string/homem" />
+	
+	        <RadioButton
+	            android:id="@+id/radioMulher"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/mulher" />
+	
+	        <RadioButton
+	            android:id="@+id/radioRN"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/rn" />
+	
+	        <RadioButton
+	            android:id="@+id/radioPrematuro"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginRight="16dp"
+	            android:text="@string/prematuro" />
+	    </RadioGroup>
+	
+	    <EditText
+	        android:id="@+id/txtPlaquetometria"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@+id/lblPeso"
+	        android:layout_alignLeft="@+id/txtPeso"
+	        android:ems="3"
+	        android:gravity="center"
+	        android:inputType="number"
+	        android:maxLength="2" >
+	
+	        <requestFocus />
+	    </EditText>
+	
+	    <EditText
+	        android:id="@+id/txtRendimento"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/lblRendimento"
+	        android:layout_marginLeft="20dp"
+	        android:layout_toRightOf="@+id/rdgTipoPessoa"
+	        android:ems="3"
+	        android:gravity="center"
+	        android:inputType="number"
+	        android:maxLength="2" />
+	
+	    <EditText
+	        android:id="@+id/txtPeso"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@+id/lblRendimento"
+	        android:layout_alignLeft="@+id/txtRendimento"
+	        android:ems="3"
+	        android:gravity="center"
+	        android:inputType="number"
+	        android:maxLength="3" />
+	
+	    <TextView
+	        android:id="@+id/lblPlaquetometria2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@id/lblPlaquetometria"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="10dp"
+	        android:text="@string/mm3"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:textSize="12sp" />
+	
+	    <TextView
+	        android:id="@+id/lblPeso2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/lblPeso"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="10dp"
+	        android:text="@string/unidadePeso"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:textSize="12sp" />
+	
+	    <TextView
+	        android:id="@+id/lblRendimento2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/lblRendimento"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="10dp"
+	        android:text="@string/porcentagem"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:textSize="12sp" />
+	
+	    <RadioGroup
+	        android:id="@+id/rdgTipoTransfusao"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignTop="@+id/rdgTipoPessoa"
+	        android:layout_marginRight="13dp"
+	        android:orientation="vertical"
+	        android:padding="0dp"
+	        android:paddingLeft="0dp"
+	        android:paddingTop="0dp" >
+	
+	        <RadioButton
+	            android:id="@+id/radioTerapeutica"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:checked="false"
+	            android:text="@string/terapeutica" />
+	
+	        <RadioButton
+	            android:id="@+id/radioProfilatica"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/profilatico" />
+	    </RadioGroup>
+	
+	    <TextView
+	        android:id="@+id/rsltStandard"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/lbl1"
+	        android:layout_centerHorizontal="true"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <TextView
+	        android:id="@+id/rsltAferese"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/lbl3"
+	        android:layout_centerHorizontal="true"
+	        android:paddingBottom="1sp"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <TextView
+	        android:id="@+id/lbl3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/rsltStandard"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="10dp"
+	        android:gravity="center_horizontal"
+	        android:text="@string/aferese"
+	        android:textAppearance="?android:attr/textAppearanceLarge"
+	        android:textColor="@android:color/holo_blue_dark" />
+	
+	    <TextView
+	        android:id="@+id/lbl1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/rdgTipoPessoa"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="19dp"
+	        android:gravity="center_horizontal"
+	        android:text="@string/standard"
+	        android:textAppearance="?android:attr/textAppearanceLarge"
+	        android:textColor="@android:color/holo_blue_dark" />
+	
+	    <TextView
+	        android:id="@+id/lblPlaquetometriaTipo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/lblPlaquetometria"
+	        android:layout_below="@+id/lblPlaquetometria"
+	        android:layout_marginTop="-8dp"
+	        android:text="@string/preTransfusional"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:textColor="@android:color/darker_gray" />
+	    
+		<ImageView
+	        android:id="@+id/separatorVol"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/rdgTipoPessoa"
+	        android:layout_alignTop="@+id/rdgTipoPessoa"
+	        android:layout_centerHorizontal="true"
+	        android:adjustViewBounds="true"
+	        android:contentDescription="@string/separator"
+	        android:maxWidth="1dp"
+	        android:scaleType="centerCrop"
+	        android:src="@drawable/abc_ab_stacked_solid_light_holo" />
+	
+	</RelativeLayout>
+</ScrollView>

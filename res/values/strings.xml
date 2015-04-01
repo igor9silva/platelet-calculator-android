@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Albiero\'s Formula</string>
+    <string name="shortchut_name">Platelet C.</string>
+    <string name="title_section1">Volume</string>
+    <string name="title_section2">Increment</string>
+    
+    <!-- txt -->
+    <string name="peso">Weight</string>
+    <string name="plaquetometria">Platlets</string>
+    <string name="rendimento">Increment</string>
+    <string name="volume">Volume</string>
+    <!--     -->
+    
+    <!-- transfusao -->
+    <string name="terapeutica">Therapy</string>
+    <string name="profilatico">Prophylatic</string>
+    <!--            -->
+    
+    <!-- pessoa -->
+    <string name="homem">Man</string>
+    <string name="mulher">Woman or\nChild</string>
+    <string name="rn">Newborn</string>
+    <string name="prematuro">Premature</string>
+    <!--        -->
+    
+    <!-- outros -->
+    <string name="unidade">unit</string>
+    <string name="standard">Standard/Random Donor</string>
+    <string name="radioStandard">Random\nDonor</string>
+    <string name="aferese">Apheresis/Buffy Coat/Pool</string>
+    <string name="radioAferese">Apheresis</string>
+    <string name="percentualDeRendimento">Percentual of Increment</string>
+    <string name="mm3">000   /mm3</string>
+    <string name="unidadePeso">kg</string>
+    <string name="porcentagem">%</string>
+    <string name="unidadeVolume">ml</string>
+    <string name="missingData">Missing Parameters</string>
+    <string name="preTransfusional">Pre Transfusion</string>
+    <string name="posTransfusional">After Transfusion</string>
+    <string name="separator">separator</string>
+    <!--        -->
+
+</resources>
