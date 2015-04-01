@@ -397,12 +397,13 @@ public class MainActivity extends ActionBarActivity {
     		((EditText)RootView.findViewById(R.id.txtPlaquetometriaPre)).addTextChangedListener(tw);
     		((EditText)RootView.findViewById(R.id.txtPlaquetometriaPos)).addTextChangedListener(tw);
     		((EditText)RootView.findViewById(R.id.txtPesoRend)).addTextChangedListener(tw);
+    		((EditText)RootView.findViewById(R.id.txtAlturaRend)).addTextChangedListener(tw);
     		((EditText)RootView.findViewById(R.id.txtVolume)).addTextChangedListener(tw);
     		((RadioGroup)RootView.findViewById(R.id.rdgTipoPessoaRend)).setOnCheckedChangeListener(ccl);
     		((RadioGroup)RootView.findViewById(R.id.rdgTipoTransfusaoRend)).setOnCheckedChangeListener(ccl);
     		
     		// clear results
-    		ClearResult();
+    		ClearResults();
             
             return RootView;
         }
@@ -415,6 +416,7 @@ public class MainActivity extends ActionBarActivity {
     		EditText txtPlaquetometriaPos = (EditText)RootView.findViewById(R.id.txtPlaquetometriaPos);
     		EditText txtVolume = (EditText)RootView.findViewById(R.id.txtVolume);
     		EditText txtPeso = (EditText)RootView.findViewById(R.id.txtPesoRend);
+    		EditText txtAltura = (EditText)RootView.findViewById(R.id.txtAlturaRend);
     		
     		// ====================================================================================
     		double qtDiferencaPlaquetas = 0;
@@ -422,19 +424,21 @@ public class MainActivity extends ActionBarActivity {
     			if (txtPlaquetometriaPos.getText().length() > 0) {
     				qtDiferencaPlaquetas = (Double.parseDouble(txtPlaquetometriaPos.getText().toString()) 
     									   - Double.parseDouble(txtPlaquetometriaPre.getText().toString())) 
-    									   * 1000;
+    									   * 1000; // multiplies by 1000 cause fields do not contain the last
+    											   // three zeros, they're 'xxx' and not 'xxx000'
     			} else {
-    				ClearResult();
+    				ClearResults();
     				return;
     			}
         	} else {
-    			ClearResult();
+    			ClearResults();
     			return;
     		}
     		// ====================================================================================    		
     		
     		// ====================================================================================
     		double volemia = 0;
+    		double pesoDouble = 0;
     		int id;
     		if ((id = rdgTipoPessoa.getCheckedRadioButtonId()) != -1) {
     			Map<Integer, Integer> volemiaPorKg = new HashMap<Integer, Integer>();
@@ -442,8 +446,6 @@ public class MainActivity extends ActionBarActivity {
     			volemiaPorKg.put(R.id.radioMulherRend, 65);
     			volemiaPorKg.put(R.id.radioRNRend, 90);
     			volemiaPorKg.put(R.id.radioPrematuroRend, 110);
-    			
-    			double pesoDouble = 0;
     			
     			if (txtPeso.getText().length() > 0) {
     				pesoDouble = Double.parseDouble(txtPeso.getText().toString());
@@ -456,13 +458,13 @@ public class MainActivity extends ActionBarActivity {
     				
     				// TODO conversion to Pounds
     			} else {
-    				ClearResult();
+    				ClearResults();
     				return;
     			}
     			
     			volemia = pesoDouble * volemiaPorKg.get(id);
     		} else {
-    			ClearResult();
+    			ClearResults();
     			return;
     		}
     		// ====================================================================================
@@ -473,28 +475,58 @@ public class MainActivity extends ActionBarActivity {
     				volume = Double.parseDouble(txtVolume.getText().toString());
     				volume *= id == R.id.radioStandard ? 1000000000 : 1500000000;
         		} else {
-        			ClearResult();
+        			ClearResults();
         			return;
         		}
     		} else {
-    			ClearResult();
+    			ClearResults();
     			return;
     		}
     		
-    		// ====================================================================================
+    		// RENDIMENTO =========================================================================
     		double rendimento = (qtDiferencaPlaquetas * volemia * 1000) / volume;
 
-    		// ====================================================================================
     		TextView rsltBox = ((TextView)RootView.findViewById(R.id.rsltBox));
     		rsltBox.setTextSize(55);
     		rsltBox.setText(String.format("%.0f%%", rendimento * 100));
+    		// ====================================================================================
+    		
+    		double superficie = 0;
+    		if (txtAltura.getText().length() > 0) {
+    			double alturaDouble = Double.parseDouble(txtAltura.getText().toString());
+    			superficie = 0.007184 *  Math.pow(alturaDouble, 0.725) * Math.pow(pesoDouble, 0.425);
+    		} else {
+    			ClearCCI();
+    			return;
+    		}
+    		
+    		
+    		// CCI ================================================================================
+    		double CCI = (qtDiferencaPlaquetas * superficie) / (volume / 100000000L);
+
+    		TextView rsltCCI = ((TextView)RootView.findViewById(R.id.rsltCCI));
+    		rsltCCI.setTextSize(55);
+    		rsltCCI.setText(String.format("%.2f/L", CCI));
+    		// ====================================================================================    		
+    		
         }
         
-        private void ClearResult()
+        private void ClearResults()
         {
         	String faltamDados = getResources().getString(R.string.missingData);
         	
         	TextView rsltBox = ((TextView)RootView.findViewById(R.id.rsltBox));
+        	rsltBox.setTextSize(30);
+        	rsltBox.setText(faltamDados);
+        	
+        	ClearCCI();
+        }
+        
+        private void ClearCCI()
+        {
+        	String faltamDados = getResources().getString(R.string.missingData);
+        	
+        	TextView rsltBox = ((TextView)RootView.findViewById(R.id.rsltCCI));
         	rsltBox.setTextSize(30);
         	rsltBox.setText(faltamDados);
         }

@@ -8,6 +8,7 @@
     
     <!-- txt -->
     <string name="peso">Weight</string>
+    <string name="altura">Height</string>
     <string name="plaquetometria">Platlets</string>
     <string name="rendimento">Increment</string>
     <string name="volume">Volume</string>
@@ -32,8 +33,10 @@
     <string name="aferese">Apheresis/Buffy Coat/Pool</string>
     <string name="radioAferese">Apheresis</string>
     <string name="percentualDeRendimento">Percentual of Increment</string>
+    <string name="CCI">CCI</string>
     <string name="mm3">000   /mm3</string>
     <string name="unidadePeso">kg</string>
+    <string name="unidadeAltura">cm</string>
     <string name="porcentagem">%</string>
     <string name="unidadeVolume">ml</string>
     <string name="missingData">Missing Parameters</string>
