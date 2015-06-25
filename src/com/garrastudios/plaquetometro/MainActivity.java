@@ -1,5 +1,7 @@
 package com.garrastudios.plaquetometro;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -316,12 +318,14 @@ public class MainActivity extends ActionBarActivity {
     		// ====================================================================================
     		
     		// ====================================================================================
-    		String sS = finalStandard / 50 > 2 ? "s" : "";
+    		String sS = finalStandard / 55 > 2 ? "s" : "";
     		String sA = finalAferese / 200 > 2 ? "s" : "";
     		String unit = getResources().getString(R.string.unidade);
     		
     		TextView rsltStandard = ((TextView)RootView.findViewById(R.id.rsltStandard));
     		TextView rsltAferese = ((TextView)RootView.findViewById(R.id.rsltAferese));
+    		
+    		
     		
     		//rsltStandard.setTextSize(55);
     		rsltStandard.setText(String.format("%.1f %s%s (%.0fml)", finalStandard / 55, unit, sS, finalStandard));
@@ -500,13 +504,15 @@ public class MainActivity extends ActionBarActivity {
     			return;
     		}
     		
-    		
     		// CCI ================================================================================
+    		DecimalFormat df = new DecimalFormat("#,##0", new DecimalFormatSymbols(Locale.getDefault()));
+    		//df.setDecimalFormatSymbols());
+    		
     		double CCI = (qtDiferencaPlaquetas * superficie) / (volume / 100000000000L);
 
     		TextView rsltCCI = ((TextView)RootView.findViewById(R.id.rsltCCI));
     		rsltCCI.setTextSize(55);
-    		rsltCCI.setText(String.format("%.0f/L", CCI));
+    		rsltCCI.setText(String.format("%s/L", df.format(Math.floor(CCI))));
     		// ====================================================================================    		
     		
         }
